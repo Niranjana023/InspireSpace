@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Signup</title>
+  <style type="text/css">
+    body {
+      background-image: url(brown.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    #container {
+      background-color:  #8B4513;
+      padding: 50px;
+      margin-top: 70px ;
+	  margin-bottom: 70px;
+      margin-left: 250px;
+      margin-right: 250px;  
+      border-radius: 10px;
+      color: white;
+    }
+
+    .btn {
+      margin-top: 20px;
+      background-color: #E2725B;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .btn:hover {
+      background-color: #CD5C5C;
+    }
+
+    .bgText {
+      padding: 8px;
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-top: 5px;
+    }
+
+    .bgText:focus {
+      background-color: #FFEBCD;
+      outline: none;
+    }
+
+    #links {
+      margin-top: 15px;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: underline;
+      margin-left: 5px;
+    }
+
+    a:hover {
+      color: #ccc;
+    }
+
+   
+  </style>
+</head>
+
+<body>
+  <center>
+    <form id="signupForm" onsubmit="return validateForm()" method="post">
+      <div id="container">
+        <h1>Create an Account</h1>
+        <table>
+          <tr>
+            <td><label for="uName">Username</label></td>
+          </tr>
+          <tr>
+            <td><input class="bgText" type="text" id="uName" name="Name" required /></td>
+          </tr>
+
+          <tr>
+            <td><label for="eMail">Email Address</label></td>
+          </tr>
+          <tr>
+            <td><input class="bgText" type="email" id="eMail" name="eAddress" required /></td>
+          </tr>
+
+          <tr>
+            <td><label for="DOB">Date of Birth</label></td>
+          </tr>
+          <tr>
+            <td><input class="bgText" type="date" id="DOB" name="Date" required  title="Please enter a valid date" /></td>
+          </tr><tr>
+            <td><label for="pWord">Password</label></td>
+          </tr>
+          <tr>
+            <td><input class="bgText" type="password" id="pWord" name="Password" required /></td>
+          </tr>
+
+          <tr>
+            <td><label for="cPass">Confirm Password</label></td>
+          </tr>
+          <tr>
+            <td><input class="bgText" type="password" id="cPass" name="cPassword" required title="should match with password" /></td>
+          </tr>
+
+          <tr>
+            <td><input class="btn" type="submit" value="Sign Up" /></td>
+          </tr>
+        </table>
+
+        <div id="links">
+          <p>Already have an account?
+            <a href="Login.html">Login</a>
+          </p>
+        </div>
+
+        
+      </div>
+    </form>
+  </center>
+
+  <script type="text/javascript">
+  const form = document.getElementById('signupForm');
+  const uName = document.getElementById('uName');
+  const eMail = document.getElementById('eMail');
+  const DOB = document.getElementById('DOB');
+  const pWord = document.getElementById('pWord');
+  const cPass = document.getElementById('cPass');
+
+  // Helper: show first invalid field's native message
+  function reportFirstInvalid() {
+    if (!uName.checkValidity()) { uName.reportValidity(); return true; }
+    if (!eMail.checkValidity()) { eMail.reportValidity(); return true; }
+    if (!DOB.checkValidity()) { DOB.reportValidity(); return true; }
+    if (!pWord.checkValidity()) { pWord.reportValidity(); return true; }
+    if (!cPass.checkValidity()) { cPass.reportValidity(); return true; }
+    return false;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // always prevent native submit; we'll handle validation + redirect
+
+    // Clear any previous custom validity messages (important!)
+    pWord.setCustomValidity('');
+    cPass.setCustomValidity('');
+
+    // Password match check
+    if (pWord.value.trim() !== cPass.value.trim()) {
+      cPass.setCustomValidity('Passwords do not match');
+      // show the message immediately
+      cPass.reportValidity();
+      return;
+    }
+
+    // Now check native constraints (required, type, etc.)
+    if (!uName.checkValidity() || !eMail.checkValidity() || !DOB.checkValidity() ||
+        !pWord.checkValidity() || !cPass.checkValidity()) {
+      // show the first native invalid field
+      reportFirstInvalid();
+      return;
+    }
+
+    // All good — success feedback and redirect
+    alert('Signup successful!');
+    // you can either submit form to server here or redirect to login:
+    window.location.href = 'Login.html';
+  });
+
+  // Real-time password-match feedback
+  function validatePasswordMatchLive() {
+    // clear previous custom message before checking
+    pWord.setCustomValidity('');
+    cPass.setCustomValidity('');
+    if (pWord.value && cPass.value && pWord.value !== cPass.value) {
+      cPass.setCustomValidity('Passwords do not match.');
+    } else {
+      cPass.setCustomValidity('');
+    }
+  }
+
+  pWord.addEventListener('input', validatePasswordMatchLive);
+  cPass.addEventListener('input', validatePasswordMatchLive);
+</script>
+
+</body>
+</html>

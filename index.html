@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InspireSpace</title>
+  <style type ="text/css">
+		/* Header styling */
+		.navbar {
+		  display: flex;
+		  justify-content: space-between;
+		  align-items: center;
+		  background-color: #8B4513; /* warm brown */
+		
+		  padding: 15px 60px;
+		 
+		  position: sticky;
+		  top: 0;
+		  z-index: 1000;
+		}
+
+		/* Left side: Logo + Name */
+		.logo-container {
+		  display: flex;
+		  align-items: center;
+		  gap: 10px;
+		}
+		.logo {
+		  width: 45px;
+		  height: 45px;
+		  border-radius: 50%;
+		  object-fit: cover;
+		  border: 2px solid #E6735C; /* coral border */
+		}
+		.site-name {
+		  font-size: 1.5rem;
+		  font-weight: 800;
+		  color: white; 
+		  margin: 0;
+		}
+				#profile {
+			color: #fff;
+			background: #E2725B; /* coral */
+			padding: 6px 14px;
+			border-radius: 4px;
+			text-decoration: none;
+			border: 2px solid #FFF8F2; /* soft border for balance */
+		  }
+
+		/* Right side nav links */
+		.nav-links a {
+		  margin-left: 25px;
+		  text-decoration: none;
+		  color: #8B4513;
+		  font-weight: 600;
+		  transition: color 0.3s ease;
+		}
+		.nav-links a:hover {
+		  color: #E6735C; /* coral hover */
+		}
+
+		/* Responsive for mobile */
+		@media (max-width: 768px) {
+		  .navbar {
+			flex-direction: column;
+			padding: 10px 20px;
+		  }
+		  .nav-links {
+			margin-top: 10px;
+		  }
+		  .nav-links a {
+			margin: 8px;
+			display: inline-block;
+		  }
+		}
+
+				
+			
+			.hero-section {
+		  display: flex;
+		  align-items: center;
+		  justify-content: space-between;
+		  background-color: #FFF8F2;
+		  padding: 20px 100px;
+		  min-height: 90vh;
+		  gap: 40px;
+		}
+
+		/* Left side text */
+		.hero-content {
+		  flex: 1;
+		  color: #8B4513;
+		}
+		.hero-content h1 {
+		  font-size: 3rem;
+		  color: #E6735C;
+		  font-weight: 800;
+		  line-height: 1.2;
+		}
+		.hero-content p {
+		  margin: 20px 0;
+		  font-size: 1.2rem;
+		  max-width: 500px;
+		  color: #8B4513;
+		}
+		.hero-btn {
+		  background-color: #E6735C;
+		  color: #FFF8F2;
+		  padding: 12px 28px;
+		  border-radius: 4px;
+		  text-decoration: none;
+		  font-weight: 600;
+		  transition: 0.3s ease;
+		}
+		.hero-btn:hover {
+		  background-color: #CD5C5C;
+		}
+
+		/* Right side circular image */
+		.hero-image {
+		  flex: 1;
+		  display: flex;
+		  justify-content: center;
+		}
+		.hero-image img {
+		  width: 400px;
+		  height: 400px;
+		  border-radius: 50%;
+		  object-fit: cover;
+		  border: 6px solid #E6735C;
+		  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+		}
+
+		/* Responsive design */
+		@media (max-width: 900px) {
+		  .hero-section {
+			flex-direction: column;
+			text-align: center;
+			padding: 60px 30px;
+		  }
+		  .hero-image img {
+			width: 280px;
+			height: 280px;
+			margin-top: 20px;
+		  }
+		}
+
+  
+  </style>
+  <body>
+		<header class="navbar">
+			<div class="logo-container">
+				<img src="logo.png" alt="Website Logo" class="logo">
+				<h1 class="site-name">InspireSpace</h1>
+			</div>
+
+			  <div class="auth-buttons">
+				<a href="login.html" class="hero-btn">Login</a>
+				<a href="signup.html" class="hero-btn">Sign Up</a>
+			  </div>
+</header>
+
+
+		
+		
+  
+	  <section class="hero-section">
+	  <div class="hero-content">
+		<h1>Where Art Meets Appetite</h1>
+		<p>Blending art and taste to craft experiences that delight your eyes and your palate.</p>
+		<a href="Signin.html" class="hero-btn">Explore Now</a>
+	  </div>
+
+	  <div class="hero-image">
+		<img src="main.png" alt="Delicious dish">
+	  </div>
+	</section>
+
+ </body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - InspireSpace</title>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: #FFF8F2; /* soft cream */
+    color: #2E2E2E;
+    line-height: 1.6;
+  }
+
+  /* HEADER */
+  #logoBar {
+    background-color: #8B4513; /* warm brown */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 40px;
+  }
+  #logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between logo and text */
+}
+
+#logoImg {
+  width: 40px;   /* adjust size as needed */
+  height: 40px;
+  border-radius: 50%; /* optional: makes circular */
+  object-fit: cover;
+}
+
+  #webName {
+    font-size: 22px;
+    font-weight: bold;
+    color: #FFDAB9; /* soft peach for logo */
+  }
+
+  #profile {
+  color: white;
+  background: #E6735C; /* coral */
+  padding: 6px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+#profile:hover {
+  background: #C65C48; /* darker coral */
+}
+
+  /* NAVBAR */
+  nav ul {
+    list-style: none;
+    background-color: #E2725B; /* coral tone */
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 12px 18px;
+    transition: background 0.3s;
+  }
+
+  nav ul li a:hover {
+    background-color: #CD5C5C; /* cinnamon orange hover */
+  }
+
+  /* ABOUT SECTIONS */
+  .section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin: 60px 80px;
+    padding: 30px;
+    background: #FFF0E5; /* light peach section */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(139, 69, 19, 0.15); /* warm shadow */
+  }
+
+  .section img {
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid #E2725B; /* coral frame */
+  }
+
+  .section-content {
+    flex: 1;
+  }
+
+  .section-content h2 {
+    color: #D2691E; /* cinnamon title */
+    margin-bottom: 15px;
+  }
+
+  .reverse {
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+  /* FOOTER */
+  footer {
+    background-color: #8B4513; /* brown footer */
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 30px 20px;
+  }
+
+  footer div {
+    flex: 1;
+    min-width: 150px;
+    padding: 10px;
+  }
+
+  footer h3 {
+    border-bottom: 2px solid #FFDAB9; /* soft peach underline */
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+
+  footer ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  footer ul li {
+    margin: 6px 0;
+  }
+
+  footer ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  footer ul li a:hover {
+    color: #FFDAB9;
+  }
+
+  footer p {
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+</style>
+
+
+</head>
+<body>
+  <!-- HEADER -->
+  <div id="logoBar">
+	  <div id="logoContainer">
+		<img src="logo.png" alt="Logo" id="logoImg">
+		<span id="webName">InspireSpace</span>
+	  </div>
+		<a href ="file:///C:/Users/ELCOT/Desktop/25PCSA114/Project_Work/bootstrap-5.3.8-dist/Profile.html"><button id="profile">MyProfile</button></a>
+	</div>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <ul>
+      <li><a href="homePage.html">Home</a></li>
+		<li><a href="About.html">About</a></li>
+		<li><a href="Food.html">Food</a></li>
+		<li><a href="DIY.html">DIY</a></li>
+		<li><a href="Explore1.html">Explore</a></li>
+		<li><a href="#">Share</a></li>
+		<li><a href="feedback.html">Feedback</a></li>
+    </ul>
+  </nav>
+
+  <!-- ABOUT SECTIONS -->
+  <section class="section reverse">
+    <div class="section-content">
+      <h2>About InspireSpace</h2>
+      <p>
+        InspireSpace is a community-driven platform where creativity finds a home.
+        Here, you can share your recipes, DIY crafts, artworks, and unique ideas that inspire others.
+        Whether you’re a chef, an artist, or someone who loves creating,
+        InspireSpace gives you a space to express, connect, and grow through creativity.
+      </p>
+    </div>
+    <img src="logo.png" alt="About InspireSpace" />
+  </section>
+  <section class="section ">
+    <div class="section-content">
+      <h2 id = "story">Our Story</h2>
+      <p>
+        Every big idea starts small — and so did InspireSpace.
+      It began with a thought: What if there was a place where everyone could share their creativity freely?
+      From cooking your favorite dish to crafting something unique,
+      InspireSpace was built to celebrate every act of creativity and connect people through inspiration.
+      </p>
+    </div>
+    <img src="story.jpg" alt="Our Story" />
+  </section>
+
+
+
+
+
+  <section class="section reverse">
+  <div class="section-content">
+    <h2 id = "mission">Our Purpose</h2>
+    <p>
+      Our purpose is to bring creators together — to share, learn, and grow.
+        We believe inspiration multiplies when shared.
+        Whether it's food, art, DIY, or crafts — InspireSpace empowers people to showcase their creativity
+        and inspire others to do the same.
+    </p>
+  </div>
+  <img src="purpose.jpg" alt="Our purpose" />
+</section>
+
+
+  
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <h3>Contact</h3>
+      <ul>
+        <li><a href="#">Email</a></li>
+        <li><a href="feedback.html">Support</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>About</h3>
+      <ul>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#mission">Mission</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Follow us</h3>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Resource</h3>
+      <ul>
+        <li><a href="#">Blogs</a></li>
+        <li><a href="#">Guides</a></li>
+      </ul>
+    </div>
+
+    <p>©2025 InspireSpace. All rights reserved.</p>
+  </footer>
+</body>
+</html>

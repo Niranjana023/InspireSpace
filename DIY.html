@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DIY</title>
+  <style>
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #FFF8F2; /* soft cream */
+  color: #2E2E2E;
+}
+
+/* LOGO BAR */
+#logoBar {
+  background-color: #8B4513; /* brown */
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #FFF8F2;
+  padding: 10px 40px;
+}
+#logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between logo and text */
+}
+
+#logoImg {
+  width: 40px;   /* adjust size as needed */
+  height: 40px;
+  border-radius: 50%; /* optional: makes circular */
+  object-fit: cover;
+}
+
+#webName {
+  font-size: 22px;
+  font-weight: bold;
+  color: #FFDAB9; /* peach tint */
+}
+
+#profile {
+  color: white;
+  background: #E6735C; /* coral */
+  padding: 6px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+#profile:hover {
+  background: #C65C48; /* darker coral */
+}
+
+/* NAVBAR */
+.navBar ul {
+  list-style-type: none;
+  background-color: #E6735C;
+  justify-content: space-around;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.navBar a {
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.navBar a:hover {
+  background-color: #CD5C5C; /* brown hover */
+}
+
+/* WELCOME SECTION */
+#welcome {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #FBEADB; /* warm peachy beige */
+}
+
+.btn {
+  margin-top: 20px;
+  background-color: #E6735C;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #C65C48;
+}
+
+/* MAIN LAYOUT */
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 40px;
+  gap: 20px;
+}
+
+/* LEFT MAIN CONTENT */
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  flex: 3;
+}
+
+#bFast {
+  background-color: #FFF3E6; /* soft beige */
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+#bFast:hover {
+  transform: scale(1.03);
+  background-color: #F5D7B2; /* light golden */
+}
+
+#bFast img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* RIGHT ASIDE */
+aside {
+  flex: 1;
+  background-color: #FFF3E6;
+  border-left: 3px solid #E6735C;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+aside h3 {
+  color: #8B4513;
+  margin-bottom: 10px;
+}
+
+aside p {
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+aside ul {
+  list-style: none;
+  padding: 0;
+}
+
+aside ul li {
+  margin: 8px 0;
+}
+
+aside ul li a {
+  color: #4B2E05;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+aside ul li a:hover {
+  color: #E6735C;
+}
+
+#aside {
+  margin-top: 20px;
+}
+
+/* FOOTER */
+footer {
+  background-color: #8B4513;
+  color: #FFEBCD;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 30px 20px;
+}
+
+footer div {
+  flex: 1;
+  min-width: 150px;
+  padding: 10px;
+}
+
+footer h3 {
+  border-bottom: 2px solid #FFEBCD;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin: 6px 0;
+}
+
+footer ul li a {
+  color: #FFEBCD;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer ul li a:hover {
+  color: #FFDAB9;
+}
+
+footer p {
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 14px;
+}
+</style>
+
+</head>
+
+<body>
+  <!-- TOP BAR -->
+  <div id="logoBar">
+	  <div id="logoContainer">
+		<img src="logo.png" alt="Logo" id="logoImg">
+		<span id="webName">InspireSpace</span>
+	  </div>
+		<a href ="file:///C:/Users/ELCOT/Desktop/25PCSA114/Project_Work/bootstrap-5.3.8-dist/Profile.html"><button id="profile">MyProfile</button></a>
+	</div>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="navBar">
+    <ul>
+      <li><a href="homePage.html">Home</a></li>
+		<li><a href="About.html">About</a></li>
+		<li><a href="Food.html">Food</a></li>
+		<li><a href="DIY.html">DIY</a></li>
+		<li><a href="Explore1.html">Explore</a></li>
+		<li><a href="#">Share</a></li>
+		<li><a href="feedback.html">Feedback</a></li>
+    </ul>
+  </nav>
+
+  <!-- WELCOME SECTION -->
+  <section id="welcome">
+    <h2>Welcome to DIY Section!</h2>
+    <p>This is your space to explore creativity through hands-on projects. From home décor and crafts to upcycling ideas, you’ll find endless inspiration here. Whether you’re crafting something new or repurposing old items, let your imagination take the lead — create, share, and inspire others with your DIY magic!</p>
+    <a href = "file:///C:/Users/ELCOT/Desktop/25PCSA114/Project_Work/bootstrap-5.3.8-dist/share.html"><button class="btn">Share your DIY</button></a>
+	
+  </section>
+
+  <!-- MAIN + ASIDE -->
+  <div class="main-container">
+    <!-- FOOD CARDS -->
+    <div class="food-grid">
+      <div id="bFast">
+        <img src="craft.jpg" alt="Breakfast">
+        <p>Craft</p>
+      </div>
+      <div id="bFast">
+        <img src="decor.jpg" alt="Lunch">
+        <p>Home Decor</p>
+      </div>
+      <div id="bFast">
+        <img src="upcycle.jpg" alt="Dinner">
+        <p>Upcycling</p>
+      </div>
+      <div id="bFast">
+        <img src="crochet.jpg" alt="Dessert">
+        <p>crochet</p>
+      </div>
+    </div>
+
+    <!-- ASIDE SECTION -->
+	<aside id="aside">
+  
+
+  <h3>Quick Tip</h3>
+  <p>Before starting any project, plan your materials — it saves time and makes your crafting smoother!</p>
+	
+
+  
+	</aside>
+
+   </div>
+  
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <h3>Contact</h3>
+      <ul>
+        <li><a href="#">Email</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>About</h3>
+      <ul>
+        <li><a href="#">Our Story</a></li>
+        <li><a href="#">Mission</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Follow us</h3>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Resource</h3>
+      <ul>
+        <li><a href="#">Blogs</a></li>
+        <li><a href="#">Guides</a></li>
+      </ul>
+    </div>
+
+    <p>©2025 InspireSpace. All rights reserved.</p>
+  </footer>
+</body>
+</html>

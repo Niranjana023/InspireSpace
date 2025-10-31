@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HomePage</title>
+  <style>
+  /* RESET */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: #FFF8F2; /* soft cream background */
+    color: #2E2E2E; /* dark grey text */
+  }
+
+  /* LOGO BAR */
+  #logoBar {
+    background-color: #8B4513; /* warm brown like chocolate */
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 10px 40px;
+  }
+  #logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between logo and text */
+}
+
+#logoImg {
+  width: 40px;   /* adjust size as needed */
+  height: 40px;
+  border-radius: 50%; /* optional: makes circular */
+  object-fit: cover;
+}
+
+  #webName {
+    font-size: 22px;
+    font-weight: bold;
+    color: #FFDAB9; /* peach tone for creative touch */
+  }
+
+  #profile {
+  color: white;
+  background: #E6735C; /* coral */
+  padding: 6px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+#profile:hover {
+  background: #C65C48; /* darker coral */
+}
+
+  /* NAVBAR */
+  .navBar ul {
+    list-style-type: none;
+    background-color: #E2725B; /* coral tone for nav */
+    justify-content: space-around;
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navBar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .navBar a:hover {
+    background-color: #CD5C5C; /* cinnamon hover effect */
+  }
+
+  /* WELCOME SECTION */
+  #welcome {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #FFF0E5; /* soft warm beige */
+  }
+
+  .btn {
+    margin-top: 20px;
+    background-color: #D2691E; /* cinnamon orange */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background-color: #8B4513; /* deep brown hover */
+  }
+
+  /* MAIN CONTENT SECTION */
+  .main1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    margin: 40px;
+  }
+
+  /* LEFT IMAGE SLIDE SECTION */
+  .slide {
+    position: relative;
+    width: 50%;
+    height: 350px;
+    overflow: hidden;
+    background-color: #FAE5D3; /* warm cream background */
+    border-radius: 8px;
+  }
+
+  .slide img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 1s ease;
+  }
+
+  .slide .img2 {
+    opacity: 0;
+  }
+
+  .slide:hover .img2 {
+    opacity: 1;
+  }
+
+  /* RIGHT CONTENT SECTION */
+  .content-section {
+    flex: 1;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-left: 3px solid #E2725B; /* coral border accent */
+    min-height: 350px;
+    border-radius: 8px;
+  }
+  #weeklyShowcase {
+  background-color: #FFF8F2;
+  text-align: center;
+  padding: 60px 20px;
+}
+.showcase {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.item img {
+  width: 220px;
+  height: 220px;
+  border-radius: 15px;
+  border: 3px solid #E6735C;
+  object-fit: cover;
+}
+.item h3 {
+  color: #8B4513;
+  margin-top: 10px;
+}
+
+
+  /* FOOTER */
+  footer {
+    background-color: #8B4513; /* deep brown footer */
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 30px 20px;
+  }
+
+  footer div {
+    flex: 1;
+    min-width: 150px;
+    padding: 10px;
+  }
+
+  footer h3 {
+    border-bottom: 2px solid #FFDAB9; /* peach underline */
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+
+  footer ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  footer ul li {
+    margin: 6px 0;
+  }
+
+  footer ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  footer ul li a:hover {
+    color: #FFDAB9; /* peach hover */
+  }
+
+  footer p {
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+</style>
+
+</head>
+
+<body>
+  <!-- TOP BAR -->
+  <div id="logoBar">
+	  <div id="logoContainer">
+		<img src="logo.png" alt="Logo" id="logoImg">
+		<span id="webName">InspireSpace</span>
+	  </div>
+		<a href ="file:///C:/Users/ELCOT/Desktop/25PCSA114/Project_Work/bootstrap-5.3.8-dist/Profile.html"><button id="profile">MyProfile</button></a>
+	</div>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="navBar">
+    <ul>
+      <li><a href="homePage.html">Home</a></li>
+		<li><a href="About.html">About</a></li>
+		<li><a href="Food.html">Food</a></li>
+		<li><a href="DIY.html">DIY</a></li>
+		<li><a href="Explore1.html">Explore</a></li>
+		<li><a href="#">Share</a></li>
+		<li><a href="feedback.html">Feedback</a></li>
+    </ul>
+  </nav>
+
+  <!-- WELCOME SECTION -->
+  <section id="welcome">
+    <h1>Welcome to InspireSpace, a space to share your Recipe, Art and Creativity</h1>
+    <a href="file:///C:/Users/ELCOT/Desktop/25PCSA114/Project_Work/bootstrap-5.3.8-dist/Explore.html"><button class="btn">Explore Now</button></a>
+  </section>
+
+  <!-- MAIN CONTENT AREA -->
+  <main class="main1">
+    <!-- LEFT SLIDE IMAGE -->
+    <div class="slide">
+      <img src="food1.jpg" alt="Food image">
+      <img class="img2" src="craft1.jpg" alt="Craft image">
+    </div>
+
+    <!-- RIGHT CONTENT (Blank for now) -->
+    <article class="content-section">
+      <div id="weeklyShowcase">
+  <h2>Food & Art of the Week</h2><br>
+  <div class="showcase">
+    <div class="item">
+      <img src="brownie.jpg" alt="Dish of the Week">
+      <h3>Yummy Brownie</h3>
+    </div>
+    <div class="item">
+      <img src="spidey.jpg" alt="Art of the Week">
+      <h3>Spidey Beanies</h3>
+    </div>
+  </div>
+</div>
+
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+   <footer>
+    <div>
+      <h3>Contact</h3>
+      <ul>
+        <li><a href="#">Email</a></li>
+        <li><a href="feedback.html">Support</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>About</h3>
+      <ul>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="about.html">Mission</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Follow us</h3>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Resource</h3>
+      <ul>
+        <li><a href="#">Blogs</a></li>
+        <li><a href="#">Guides</a></li>
+      </ul>
+    </div>
+
+    <p>©2025 InspireSpace. All rights reserved.</p>
+  </footer>
+</body>
+</html>

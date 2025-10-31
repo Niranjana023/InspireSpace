@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Food</title>
+  <style>
+  /* RESET */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FFF8F2; /* Cream background */
+    color: #2E2E2E;
+  }
+
+  /* LOGO BAR */
+  #logoBar {
+    background-color: #A0522D; /* Warm brown */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFEBCD; /* Light beige text */
+    padding: 10px 40px;
+  }
+  
+  #logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between logo and text */
+}
+
+#logoImg {
+  width: 40px;   /* adjust size as needed */
+  height: 40px;
+  border-radius: 50%; /* optional: makes circular */
+  object-fit: cover;
+}
+
+  #webName {
+    font-size: 22px;
+    font-weight: bold;
+    color: #FFE4C4; /* Peach cream */
+  }
+  
+
+ #profile {
+  color: white;
+  background: #E6735C; /* coral */
+  padding: 6px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+#profile:hover {
+  background: #C65C48; /* darker coral */
+}
+
+  /* NAVBAR */
+  .navBar ul {
+    list-style-type: none;
+    background-color: #E2725B; /* Coral bar */
+    justify-content: space-around;
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navBar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .navBar a:hover {
+    background-color: #CD5C5C; /* Muted red hover */
+  }
+
+  /* WELCOME SECTION */
+  #welcome {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #FFEFD5; /* Pale peach background */
+  }
+
+  .btn {
+    margin-top: 20px;
+    background-color: #E2725B; /* Coral */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .btn:hover {
+    background-color: #D2691E; /* Cinnamon */
+  }
+
+  /* MAIN LAYOUT */
+  .main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 40px;
+    gap: 20px;
+  }
+
+  /* LEFT MAIN CONTENT */
+  .food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    flex: 3;
+  }
+
+  #bFast {
+    background-color: #FFF0E5; /* Soft beige tile */
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(139, 69, 19, 0.15); /* Warm shadow */
+    transition: 0.3s;
+  }
+
+  #bFast:hover {
+    transform: scale(1.03);
+	background-color: #F5D7B2;
+  }
+
+  #bFast img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  /* RIGHT ASIDE */
+  aside {
+    flex: 1;
+    background-color: #FFF5E1; /* Creamy sidebar */
+    border-left: 3px solid #E2725B;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  aside h3 {
+    color: #A0522D;
+    margin-bottom: 10px;
+  }
+
+  aside p {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+
+  aside ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  aside ul li {
+    margin: 8px 0;
+  }
+
+  aside ul li a {
+    color: #4B2E05;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  aside ul li a:hover {
+    color: #E2725B;
+  }
+
+  #aside {
+    margin-top: 20px;
+  }
+
+  /* FOOTER */
+  footer {
+    background-color: #A0522D; /* Brown footer */
+    color: #FFEBCD;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 30px 20px;
+  }
+
+  footer div {
+    flex: 1;
+    min-width: 150px;
+    padding: 10px;
+  }
+
+  footer h3 {
+    border-bottom: 2px solid #FFDAB9; /* Peach underline */
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+
+  footer ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  footer ul li {
+    margin: 6px 0;
+  }
+
+  footer ul li a {
+    color: #FFEBCD;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  footer ul li a:hover {
+    color: #FFDAB9;
+  }
+
+  footer p {
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+</style>
+
+
+</head>
+
+<body>
+  <!-- TOP BAR -->
+  <div id="logoBar">
+	  <div id="logoContainer">
+		<img src="logo.png" alt="Logo" id="logoImg">
+		<span id="webName">InspireSpace</span>
+	  </div>
+		<a href ="file:///C:/Users/ELCOT/Desktop/25PCSA114/Project_Work/bootstrap-5.3.8-dist/Profile.html"><button id="profile">MyProfile</button></a>
+	</div>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="navBar">
+    <ul>
+     <li><a href="homePage.html">Home</a></li>
+		<li><a href="About.html">About</a></li>
+		<li><a href="Food.html">Food</a></li>
+		<li><a href="DIY.html">DIY</a></li>
+		<li><a href="Explore1.html">Explore</a></li>
+		<li><a href="#">Share</a></li>
+		<li><a href="feedback.html">Feedback</a></li>
+    </ul>
+  </nav>
+
+  <!-- WELCOME SECTION -->
+  <section id="welcome">
+    <h2>Welcome to Food Corner</h2>
+    <p>Hungry for ideas? You’ve come to the right place! The Food Corner is packed with tasty recipes, cooking hacks, and creative dishes from people just like you. Cook, share, and get inspired – your next favorite meal is just a click away!</p>
+     <a href = "file:///C:/Users/ELCOT/Desktop/25PCSA114/Project_Work/bootstrap-5.3.8-dist/share.html"><button class="btn">Share your Recipe</button></a>
+	
+  </section>
+
+  <!-- MAIN + ASIDE -->
+  <div class="main-container">
+    <!-- FOOD CARDS -->
+    <div class="food-grid">
+      <div tabindex =1 id="bFast">
+        <img src="break.jpg" alt="Breakfast">
+        <p>Breakfast</p>
+      </div>
+      <div tabindex =2 id="bFast">
+        <img src="lunch.jpg" alt="Lunch">
+        <p>Lunch</p>
+      </div>
+      <div tabindex =3 id="bFast">
+        <img src="dinner.jpg" alt="Dinner">
+        <p>Dinner</p>
+      </div>
+      <div tabindex =4 id="bFast">
+        <img src="dessert.jpg" alt="Dessert">
+        <p>Desserts</p>
+      </div>
+    </div>
+
+    <!-- ASIDE SECTION -->
+	<aside id="aside">
+      
+
+      <h3>Cooking Tip</h3>
+      <p>Always taste as you cook — adjusting seasoning gradually brings out the best flavor in every dish!</p>
+    </aside>
+    
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <h3>Contact</h3>
+      <ul>
+        <li><a href="#">Email</a></li>
+        <li><a href="feedback.html">Support</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>About</h3>
+      <ul>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="about.html">Mission</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Follow us</h3>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Resource</h3>
+      <ul>
+        <li><a href="#">Blogs</a></li>
+        <li><a href="#">Guides</a></li>
+      </ul>
+    </div>
+
+    <p>©2025 InspireSpace. All rights reserved.</p>
+  </footer>
+</body>
+</html>
